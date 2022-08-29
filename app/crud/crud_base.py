@@ -39,7 +39,7 @@ def put(db: Session, model: Type[DeclarativeBase], data: Dict[str, Any]):
     return model
 
 
-def delete(db: Session, model: Type[DeclarativeBase], model_id):
+def delete(db: Session, model: Type[DeclarativeBase], model_id: int):
     model = read_single(db, model, model.id == model_id)
     if model is None:
         return None
